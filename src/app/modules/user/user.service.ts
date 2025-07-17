@@ -3,6 +3,8 @@ import httpStatus from "http-status-codes";
 import { JwtPayload } from "jsonwebtoken";
 import { envVars } from "../../config/env";
 import AppError from "../../errorHelpers/AppError";
+import { QueryBuilder } from "../../utils/QueryBuilder";
+import { userSearchableFields } from "./user.constant";
 import { IAuthProvider, IUser, Role } from "./user.interface";
 import { User } from "./user.model";
 
@@ -74,19 +76,36 @@ const updateUser = async (userId: string, payload: Partial<IUser>, decodedToken:
 }
 
 
-const getAllUsers = async () => {
-    const users = await User.find({});
-    const totalUsers = await User.countDocuments();
+const getAllUsers = async (query: Record<string, string>) => {
+
+    const queryBuilder = new QueryBuilder(User.find(), query)
+    const usersData = queryBuilder
+        .filter()
+        .search(userSearchableFields)
+        .sort()
+        .fields()
+        .paginate();
+
+    const [data, meta] = await Promise.all([
+        usersData.build(),
+        queryBuilder.getMeta()
+    ])
+
     return {
-        data: users,
-        meta: {
-            total: totalUsers
-        }
+        data,
+        meta
+    }
+};
+const getSingleUser = async (id: string) => {
+    const user = await User.findById(id);
+    return {
+        data: user
     }
 };
 
 export const UserServices = {
     createUser,
     getAllUsers,
+    getSingleUser,
     updateUser
 }
