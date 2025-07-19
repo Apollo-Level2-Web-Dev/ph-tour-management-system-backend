@@ -1,8 +1,10 @@
 import { Router } from "express"
 import { AuthRoutes } from "../modules/auth/auth.route"
-import { UserRoutes } from "../modules/user/user.route"
+import { BookingRoutes } from "../modules/booking/booking.route"
 import { DivisionRoutes } from "../modules/division/division.route"
+import { PaymentRoutes } from "../modules/payment/payment.route"
 import { TourRoutes } from "../modules/tour/tour.route"
+import { UserRoutes } from "../modules/user/user.route"
 
 export const router = Router()
 
@@ -22,6 +24,14 @@ const moduleRoutes = [
     {
         path: "/tour",
         route: TourRoutes
+    },
+    {
+        path: "/booking",
+        route: BookingRoutes
+    },
+    {
+        path: "/payment",
+        route: PaymentRoutes
     }
     // {
     //     path: "/tour",
