@@ -1,0 +1,1315 @@
+{
+	"info": {
+		"_postman_id": "8c1bda47-a3c5-4423-a7d3-18b87938f945",
+		"name": "Backend PH Tour Management APIs",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "28720851"
+	},
+	"item": [
+		{
+			"name": "User",
+			"item": [
+				{
+					"name": "Register",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\" : \"Samin Ravi\",\r\n    \"email\" : \"saminravi.ph@gmail.com\",\r\n    \"password\" :\"Ph@12345678\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/v1/user/register",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"v1",
+								"user",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get All Users",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2ODZmZDUwYmExMGRiNmZkZWFkNGNhNjIiLCJlbWFpbCI6InN1cGVyQGdtYWlsLmNvbSIsInJvbGUiOiJTVVBFUl9BRE1JTiIsImlhdCI6MTc1MjE2NDY4NywiZXhwIjoxNzUyMTY0NzAyfQ.aVH4F_84OmtwWl5_JR1Fjws1byrZubXw9Yegbyqzeuw",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\" : \"Mehedi Imun\",\r\n    \"email\" : \"imun@gmail.com\"\r\n}"
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/v1/user/all-users",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"v1",
+								"user",
+								"all-users"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update User",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2ODZmZDUwYmExMGRiNmZkZWFkNGNhNjIiLCJlbWFpbCI6InN1cGVyQGdtYWlsLmNvbSIsInJvbGUiOiJTVVBFUl9BRE1JTiIsImlhdCI6MTc1MjgyOTIzNiwiZXhwIjoxNzUyOTE1NjM2fQ.5FKkzdTqRgx7ir4Qg4UnA_uIyXDt-raLkQmOsaU1vZg",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"phone\" : \"01912345678\",\r\n    \"address\" : \"Dhaka\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/v1/user/686fd50ba10db6fdead4ca62",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"v1",
+								"user",
+								"686fd50ba10db6fdead4ca62"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Me",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2ODcwMThlM2JlNWNlMjk2M2I1MTY2MzgiLCJlbWFpbCI6InNhbWluaXNyYXIxQGdtYWlsLmNvbSIsInJvbGUiOiJVU0VSIiwiaWF0IjoxNzUzMTU5MzIzLCJleHAiOjE3NTMyNDU3MjN9.mwAexnOIF_WW7muP_rEiWMh6Tx8KPPJZEXAwLpGzFGk",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\" : \"super@gmail.com\",\r\n    \"password\" :\"12345678\"\r\n}"
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/v1/user/me",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"v1",
+								"user",
+								"me"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Auth",
+			"item": [
+				{
+					"name": "User Login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    // \"email\" : \"saminravi.ph@gmail.com\",\r\n    // \"password\" :\"Ph@12345678\"\r\n    \"email\" : \"super@gmail.com\",\r\n    \"password\" :\"12345678\"\r\n    // \"email\" : \"saminisrar6@gmail.com\",\r\n    // \"password\" :\"12345678\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://backend-ph-tour-management-system.vercel.app/api/v1/auth/login",
+							"protocol": "https",
+							"host": [
+								"backend-ph-tour-management-system",
+								"vercel",
+								"app"
+							],
+							"path": [
+								"api",
+								"v1",
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "New Access Token / Refresh Token",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5000/api/v1/auth/refresh-token",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"v1",
+								"auth",
+								"refresh-token"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Logout",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\" : \"super@gmail.com\",\r\n    \"password\" :\"12345678\"\r\n}"
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/v1/auth/logout",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"v1",
+								"auth",
+								"logout"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Change Password",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2ODZmZDUwYmExMGRiNmZkZWFkNGNhNjIiLCJlbWFpbCI6InN1cGVyQGdtYWlsLmNvbSIsInJvbGUiOiJTVVBFUl9BRE1JTiIsImlhdCI6MTc1MzM3NTc4MiwiZXhwIjoxNzUzNDYyMTgyfQ.Mr2CDX4567Jzc_zK0KHsubIIH-L93iVqjHp_5TWfIE8",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"oldPassword\" : \"Ph@12345678\",\r\n    \"newPassword\" : \"Ph@123456789\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/v1/auth/reset-password",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"v1",
+								"auth",
+								"reset-password"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Forgot Password",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2ODZmZDUwYmExMGRiNmZkZWFkNGNhNjIiLCJlbWFpbCI6InN1cGVyQGdtYWlsLmNvbSIsInJvbGUiOiJTVVBFUl9BRE1JTiIsImlhdCI6MTc1Mjk0MDE5NiwiZXhwIjoxNzUzMDI2NTk2fQ.qfClcKI5eWgut5SB_jSOt1Vi54S_xmbZOmUCBrsHJh4",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\" : \"super@gmail.com\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/v1/auth/forgot-password",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"v1",
+								"auth",
+								"forgot-password"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Reset Password",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2ODdmMzEwYzcyNDE1MWViMmZjZjBjNDEiLCJlbWFpbCI6InNhbWluaXNyYXI2QGdtYWlsLmNvbSIsInJvbGUiOiJVU0VSIiwiaWF0IjoxNzUzMTY2NzUxLCJleHAiOjE3NTMxNjczNTF9.6fOrB14iKWkz6GFlNtSIK2tS9eJSuR-DnF6ie5xglPg",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\" : \"687f310c724151eb2fcf0c41\",\r\n    \"newPassword\" : \"Phero@12345678\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/v1/auth/reset-password",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"v1",
+								"auth",
+								"reset-password"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Set Password",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2ODcwMThlM2JlNWNlMjk2M2I1MTY2MzgiLCJlbWFpbCI6InNhbWluaXNyYXIxQGdtYWlsLmNvbSIsInJvbGUiOiJVU0VSIiwiaWF0IjoxNzUzMTMyODY4LCJleHAiOjE3NTMyMTkyNjh9.HJFuCh1VWn25aFS4bg5zEQfgfw_oX8PDfW9pnZOBso0",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"password\" : \"12345678Ph@\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/v1/auth/set-password",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"v1",
+								"auth",
+								"set-password"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Division",
+			"item": [
+				{
+					"name": "Create Division",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2ODZmZDUwYmExMGRiNmZkZWFkNGNhNjIiLCJlbWFpbCI6InN1cGVyQGdtYWlsLmNvbSIsInJvbGUiOiJTVVBFUl9BRE1JTiIsImlhdCI6MTc1MzQzNjUwOCwiZXhwIjoxNzUzNTIyOTA4fQ.DVUZXSTsSCByrzT_zop0h6z9SwfFFAIUi2O9ZgtQwoo",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "data",
+									"value": "{\n  \"name\": \"Dhaka 12\",\n\n  \"description\": \"Dhaka Division is the central region of Bangladesh and the capital of the country.\"\n}",
+									"type": "text"
+								},
+								{
+									"key": "file",
+									"type": "file",
+									"src": "/C:/Users/samin/Downloads/Aerial-view-of-Chittagong-Port.webp"
+								}
+							]
+						},
+						"url": {
+							"raw": "https://my-ph-tour-management.vercel.app/api/v1/division/create",
+							"protocol": "https",
+							"host": [
+								"my-ph-tour-management",
+								"vercel",
+								"app"
+							],
+							"path": [
+								"api",
+								"v1",
+								"division",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get All Division",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"name\": \"John Doe\",\r\n  \"email\": \"john3@example.com\",\r\n  \"password\": \"SecurePass123!\",\r\n  \"phone\": \"017XXXXXXXX\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/v1/division",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"v1",
+								"division"
+							],
+							"query": [
+								{
+									"key": "searchTerm",
+									"value": "sy",
+									"disabled": true
+								},
+								{
+									"key": "page",
+									"value": "2",
+									"disabled": true
+								},
+								{
+									"key": "limit",
+									"value": "20",
+									"disabled": true
+								},
+								{
+									"key": "sortBy",
+									"value": "createdAt",
+									"disabled": true
+								},
+								{
+									"key": "sortOrder",
+									"value": "desc",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Single Division with slug",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"name\": \"John Doe\",\r\n  \"email\": \"john3@example.com\",\r\n  \"password\": \"SecurePass123!\",\r\n  \"phone\": \"017XXXXXXXX\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/v1/division/dhaka-division",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"v1",
+								"division",
+								"dhaka-division"
+							],
+							"query": [
+								{
+									"key": "searchTerm",
+									"value": "sy",
+									"disabled": true
+								},
+								{
+									"key": "page",
+									"value": "2",
+									"disabled": true
+								},
+								{
+									"key": "limit",
+									"value": "20",
+									"disabled": true
+								},
+								{
+									"key": "sortBy",
+									"value": "createdAt",
+									"disabled": true
+								},
+								{
+									"key": "sortOrder",
+									"value": "desc",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Division",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2ODZmZDUwYmExMGRiNmZkZWFkNGNhNjIiLCJlbWFpbCI6InN1cGVyQGdtYWlsLmNvbSIsInJvbGUiOiJTVVBFUl9BRE1JTiIsImlhdCI6MTc1MzEyNjU1NSwiZXhwIjoxNzUzMjEyOTU1fQ.d_PU99ElPm_ZyaagoJieFTV7OlTnxUvuCuVMtnjYCRY",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "data",
+									"value": "{\n  \"name\": \"Dhaka 6\"\n}",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "file",
+									"type": "file",
+									"src": "/C:/Users/samin/Downloads/Aerial-view-of-Chittagong-Port.webp"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/v1/division/687e9f4598a29f41d9991d26",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"v1",
+								"division",
+								"687e9f4598a29f41d9991d26"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Division",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Greater Sylhet\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/v1/division/c6ac568f-e551-4ae7-8f92-e0dfb96c4f3e",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"v1",
+								"division",
+								"c6ac568f-e551-4ae7-8f92-e0dfb96c4f3e"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Tour Type",
+			"item": [
+				{
+					"name": "Create Tour Type",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\":\"Lake Tour\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/v1/tour/create-tour-type",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"v1",
+								"tour",
+								"create-tour-type"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get All Tour Type",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "data",
+									"value": "{\n  \"slug\": \"sundarbans-wildlife-tour\",\n  \"title\": \"Sundarbans Wildlife Tour\",\n  \"description\": \"Explore the largest mangrove forest in the world, home to the Royal Bengal Tiger.\",\n  \"location\": \"Sundarbans, Khulna, Bangladesh\",\n  \"costFrom\": 4999.99,\n  \"startDate\": \"2025-08-01T08:00:00.000Z\",\n  \"endDate\": \"2025-08-05T17:00:00.000Z\",\n  \"tourType\": \"Nature\",\n  \"included\": [\n    \"Boat safari\",\n    \"Accommodation\",\n    \"Meals\",\n    \"Forest guide\"\n  ],\n  \"excluded\": [\n    \"Personal expenses\",\n    \"Tips\",\n    \"Travel insurance\"\n  ],\n  \"anenities\": [\n    \"AC rooms\",\n    \"Free Wi-Fi\",\n    \"24/7 support\",\n    \"Local guide\"\n  ],\n  \"tourPlan\": [\n    \"Day 1: Arrival and briefing\",\n    \"Day 2: Full-day boat tour\",\n    \"Day 3: Jungle walk\",\n    \"Day 4: Cultural visit\",\n    \"Day 5: Departure\"\n  ],\n  \"maxGuests\": 20,\n  \"minAge\": 12,\n  \"divisionId\": \"4d77c466-8ac5-4723-9366-37387fce30df\"\n}\n",
+									"type": "text"
+								},
+								{
+									"key": "files",
+									"type": "file",
+									"src": [
+										"postman-cloud:///1f033445-6f14-4310-915d-ddf56cd53195",
+										"postman-cloud:///1f033042-03d4-4f20-a6e2-d0b91ccec735",
+										"postman-cloud:///1f03309a-a1a5-44e0-a7c3-bbb83541e249"
+									]
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/v1/tour/tour-types",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"v1",
+								"tour",
+								"tour-types"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Tour",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\":\"River Tour\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/v1/tour/tour-types/6830d410a1c5e1229423cd0b",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"v1",
+								"tour",
+								"tour-types",
+								"6830d410a1c5e1229423cd0b"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Tour Type",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5000/api/v1/tour/tour-types/6830d410a1c5e1229423cd0b",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"v1",
+								"tour",
+								"tour-types",
+								"6830d410a1c5e1229423cd0b"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Tour",
+			"item": [
+				{
+					"name": "Create Tour",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2ODZmZDUwYmExMGRiNmZkZWFkNGNhNjIiLCJlbWFpbCI6InN1cGVyQGdtYWlsLmNvbSIsInJvbGUiOiJTVVBFUl9BRE1JTiIsImlhdCI6MTc1MzEyNjU1NSwiZXhwIjoxNzUzMjEyOTU1fQ.d_PU99ElPm_ZyaagoJieFTV7OlTnxUvuCuVMtnjYCRY",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "data",
+									"value": "{\n  \"title\": \"Saffari Park Tour in Khulna\",\n  \"description\": \"Capture the beauty of Barishal through professional photography sessions.\",\n  \"division\": \"68753fd33e7c54fd698f1b1c\",\n  \"tourType\": \"687540163e7c54fd698f1b30\"\n}",
+									"type": "text"
+								},
+								{
+									"key": "files",
+									"type": "file",
+									"src": [
+										"/C:/Users/samin/Downloads/download (2).jpg",
+										"/C:/Users/samin/Downloads/feature-7.jpg"
+									]
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/v1/tour/create",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"v1",
+								"tour",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get All Tour",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"name\": \"John Doe\",\r\n  \"email\": \"john3@example.com\",\r\n  \"password\": \"SecurePass123!\",\r\n  \"phone\": \"017XXXXXXXX\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/v1/tour?page=1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"v1",
+								"tour"
+							],
+							"query": [
+								{
+									"key": "searchTerm",
+									"value": "Enjoy",
+									"disabled": true
+								},
+								{
+									"key": "limit",
+									"value": "20",
+									"disabled": true
+								},
+								{
+									"key": "sortBy",
+									"value": "createdAt",
+									"disabled": true
+								},
+								{
+									"key": "sortOrder",
+									"value": "desc",
+									"disabled": true
+								},
+								{
+									"key": "location",
+									"value": "Chattogram",
+									"disabled": true
+								},
+								{
+									"key": "searchTerm",
+									"value": "amid",
+									"disabled": true
+								},
+								{
+									"key": "sort",
+									"value": "location,-title",
+									"disabled": true
+								},
+								{
+									"key": "limit",
+									"value": "5",
+									"disabled": true
+								},
+								{
+									"key": "fields",
+									"value": "-title,-location",
+									"disabled": true
+								},
+								{
+									"key": "searchTerm",
+									"value": "picturesque",
+									"disabled": true
+								},
+								{
+									"key": "location",
+									"value": "Dhaka",
+									"disabled": true
+								},
+								{
+									"key": "searchTerm",
+									"value": "Embark",
+									"disabled": true
+								},
+								{
+									"key": "sort",
+									"value": "location",
+									"disabled": true
+								},
+								{
+									"key": "page",
+									"value": "1"
+								},
+								{
+									"key": "searchTerm",
+									"value": "scenic",
+									"disabled": true
+								},
+								{
+									"key": "limit",
+									"value": "2",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Tour",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2ODZmZDUwYmExMGRiNmZkZWFkNGNhNjIiLCJlbWFpbCI6InN1cGVyQGdtYWlsLmNvbSIsInJvbGUiOiJTVVBFUl9BRE1JTiIsImlhdCI6MTc1MzEyNjU1NSwiZXhwIjoxNzUzMjEyOTU1fQ.d_PU99ElPm_ZyaagoJieFTV7OlTnxUvuCuVMtnjYCRY",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "files",
+									"type": "file",
+									"src": [
+										"/C:/Users/samin/Downloads/1200px-Bangladesh_Bank_(33398162476).jpg",
+										"/C:/Users/samin/Downloads/Aerial-view-of-Chittagong-Port.webp"
+									]
+								},
+								{
+									"key": "data",
+									"value": "{\n \n\"deleteImages\":  [\n            \"https://res.cloudinary.com/djzppynpk/image/upload/v1753130394/wttvhsboz4b-1753130392785-download-1-jpg.jpg.jpg\",\n            \"https://res.cloudinary.com/djzppynpk/image/upload/v1753130394/wp54svgb1ej-1753130392786-download-jpg.jpg.jpg\"\n        ]\n}",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/v1/tour/687ea554451df83e8bdf32bf",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"v1",
+								"tour",
+								"687ea554451df83e8bdf32bf"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Tour",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Greater Sylhet\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/v1/tour/d5d2770d-7706-4057-abb0-1014de022d13",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"v1",
+								"tour",
+								"d5d2770d-7706-4057-abb0-1014de022d13"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Booking",
+			"item": [
+				{
+					"name": "Create Booking",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2ODdmMzEwYzcyNDE1MWViMmZjZjBjNDEiLCJlbWFpbCI6InNhbWluaXNyYXI2QGdtYWlsLmNvbSIsInJvbGUiOiJVU0VSIiwiaWF0IjoxNzUzMzgyNTYyLCJleHAiOjE3NTM0Njg5NjJ9.Otz_bPECmvogTdLIA2HHj5fbV3LcVOVT_heAt5COBaM",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"tour\" : \"687541493e7c54fd698f1b62\",\r\n    \"guestCount\" : 2\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://backend-ph-tour-management-system.vercel.app/api/v1/booking",
+							"protocol": "https",
+							"host": [
+								"backend-ph-tour-management-system",
+								"vercel",
+								"app"
+							],
+							"path": [
+								"api",
+								"v1",
+								"booking"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Payment",
+			"item": [
+				{
+					"name": "Payment for a Booking",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2ODZmZDUwYmExMGRiNmZkZWFkNGNhNjIiLCJlbWFpbCI6InN1cGVyQGdtYWlsLmNvbSIsInJvbGUiOiJTVVBFUl9BRE1JTiIsImlhdCI6MTc1Mjg2NjA2MiwiZXhwIjoxNzUyOTUyNDYyfQ.74nn3AdtIp-uJFMvWCDGDDTln2pFSN7Zxm9p0yN8aL4",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/v1/payment/init-payment/687accdd3aca0f50b75cb889",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"v1",
+								"payment",
+								"init-payment",
+								"687accdd3aca0f50b75cb889"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Invoice Download URL",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2ODcwMThlM2JlNWNlMjk2M2I1MTY2MzgiLCJlbWFpbCI6InNhbWluaXNyYXIxQGdtYWlsLmNvbSIsInJvbGUiOiJVU0VSIiwiaWF0IjoxNzUzMzAyOTgyLCJleHAiOjE3NTMzODkzODJ9.j1AxXbC8cYAHEmXsv_2c-b8JeY0w3LWJ0maoAolDdMw",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"tour\" : \"687541493e7c54fd698f1b62\",\r\n    \"guestCount\" : 2\r\n}"
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/v1/payment/invoice/68825e8bd448f0c7ad16107e",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"v1",
+								"payment",
+								"invoice",
+								"68825e8bd448f0c7ad16107e"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "OTP",
+			"item": [
+				{
+					"name": "Send OTP",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\" : \"Samin Ravi\",\r\n    \"email\" : \"saminisrar6@gmail.com\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/v1/otp/send",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"v1",
+								"otp",
+								"send"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Verify Otp",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\" : \"saminisrar6@gmail.com\",\r\n    \"otp\" : \"927753\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/v1/otp/verify",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"v1",
+								"otp",
+								"verify"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Stats",
+			"item": [
+				{
+					"name": "Users Stats",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2ODZmZDUwYmExMGRiNmZkZWFkNGNhNjIiLCJlbWFpbCI6InN1cGVyQGdtYWlsLmNvbSIsInJvbGUiOiJTVVBFUl9BRE1JTiIsImlhdCI6MTc1MzQyNTY2NCwiZXhwIjoxNzUzNTEyMDY0fQ.HePbh5ltztmaaylRyQBz7WASJc_oHYxMT8btWpHw88s",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    // \"email\" : \"saminravi.ph@gmail.com\",\r\n    // \"password\" :\"Ph@12345678\"\r\n    // \"email\" : \"super@gmail.com\",\r\n    // \"password\" :\"12345678\"\r\n    \"email\" : \"saminisrar6@gmail.com\",\r\n    \"password\" :\"12345678\"\r\n}"
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/v1/stats/user",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"v1",
+								"stats",
+								"user"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Tour Stats",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2ODZmZDUwYmExMGRiNmZkZWFkNGNhNjIiLCJlbWFpbCI6InN1cGVyQGdtYWlsLmNvbSIsInJvbGUiOiJTVVBFUl9BRE1JTiIsImlhdCI6MTc1MzQyNTY2NCwiZXhwIjoxNzUzNTEyMDY0fQ.HePbh5ltztmaaylRyQBz7WASJc_oHYxMT8btWpHw88s",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:5000/api/v1/stats/tour",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"v1",
+								"stats",
+								"tour"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Booking Stats",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2ODZmZDUwYmExMGRiNmZkZWFkNGNhNjIiLCJlbWFpbCI6InN1cGVyQGdtYWlsLmNvbSIsInJvbGUiOiJTVVBFUl9BRE1JTiIsImlhdCI6MTc1MzQyNTY2NCwiZXhwIjoxNzUzNTEyMDY0fQ.HePbh5ltztmaaylRyQBz7WASJc_oHYxMT8btWpHw88s",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:5000/api/v1/stats/booking",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"v1",
+								"stats",
+								"booking"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Payment Stats",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2ODZmZDUwYmExMGRiNmZkZWFkNGNhNjIiLCJlbWFpbCI6InN1cGVyQGdtYWlsLmNvbSIsInJvbGUiOiJTVVBFUl9BRE1JTiIsImlhdCI6MTc1MzQyNTY2NCwiZXhwIjoxNzUzNTEyMDY0fQ.HePbh5ltztmaaylRyQBz7WASJc_oHYxMT8btWpHw88s",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:5000/api/v1/stats/payment",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"v1",
+								"stats",
+								"payment"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
