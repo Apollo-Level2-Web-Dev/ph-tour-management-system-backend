@@ -2,6 +2,7 @@ import { Request, Response } from "express";
 import { envVars } from "../../config/env";
 import { catchAsync } from "../../utils/catchAsync";
 import { sendResponse } from "../../utils/sendResponse";
+import { SSLService } from "../sslCommerz/sslCommerz.service";
 import { PaymentService } from "./payment.service";
 
 const initPayment = catchAsync(async (req: Request, res: Response) => {
@@ -39,9 +40,36 @@ const cancelPayment = catchAsync(async (req: Request, res: Response) => {
     }
 });
 
+const getInvoiceDownloadUrl = catchAsync(
+    async (req: Request, res: Response) => {
+        const { paymentId } = req.params;
+        const result = await PaymentService.getInvoiceDownloadUrl(paymentId);
+        sendResponse(res, {
+            statusCode: 200,
+            success: true,
+            message: "Invoice download URL retrieved successfully",
+            data: result,
+        });
+    }
+);
+const validatePayment = catchAsync(
+    async (req: Request, res: Response) => {
+        console.log("sslcommerz ipn url body", req.body);
+        await SSLService.validatePayment(req.body)
+        sendResponse(res, {
+            statusCode: 200,
+            success: true,
+            message: "Payment Validated Successfully",
+            data: null,
+        });
+    }
+);
+
 export const PaymentController = {
     initPayment,
     successPayment,
     failPayment,
     cancelPayment,
+    getInvoiceDownloadUrl,
+    validatePayment
 };

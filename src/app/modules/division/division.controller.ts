@@ -6,6 +6,7 @@ import { IDivision } from "./division.interface";
 import { DivisionService } from "./division.service";
 
 const createDivision = catchAsync(async (req: Request, res: Response) => {
+    console.log(req.file);
     const payload: IDivision = {
         ...req.body,
         thumbnail: req.file?.path
