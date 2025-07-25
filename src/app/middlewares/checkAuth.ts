@@ -1,11 +1,11 @@
 import { NextFunction, Request, Response } from "express";
+import httpStatus from "http-status-codes";
 import { JwtPayload } from "jsonwebtoken";
 import { envVars } from "../config/env";
 import AppError from "../errorHelpers/AppError";
-import { verifyToken } from "../utils/jwt";
-import { User } from "../modules/user/user.model";
-import httpStatus from "http-status-codes"
 import { IsActive } from "../modules/user/user.interface";
+import { User } from "../modules/user/user.model";
+import { verifyToken } from "../utils/jwt";
 
 export const checkAuth = (...authRoles: string[]) => async (req: Request, res: Response, next: NextFunction) => {
 
@@ -23,6 +23,9 @@ export const checkAuth = (...authRoles: string[]) => async (req: Request, res: R
 
         if (!isUserExist) {
             throw new AppError(httpStatus.BAD_REQUEST, "User does not exist")
+        }
+        if (!isUserExist.isVerified) {
+            throw new AppError(httpStatus.BAD_REQUEST, "User is not verified")
         }
         if (isUserExist.isActive === IsActive.BLOCKED || isUserExist.isActive === IsActive.INACTIVE) {
             throw new AppError(httpStatus.BAD_REQUEST, `User is ${isUserExist.isActive}`)
